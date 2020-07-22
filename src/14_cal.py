@@ -31,7 +31,7 @@ import sys
 import calendar
 from datetime import datetime
 
-myCalendar = calendar.TextCalendar(0)
+myCalendar = calendar.TextCalendar()
 
 args = sys.argv
 now = datetime.now()
@@ -40,13 +40,13 @@ year = now.year
 
 if len(args) == 1:
   #user did not pass anything
-  month = now.month
-  year = now.year
+  # month = now.month
+  # year = now.year
+  pass
 
 elif len(args) == 2:
   #user passed month
   month = int(args[1])
-  year = int(now.year)
 
 elif len(args) == 3:
   #user passed month and year
@@ -57,4 +57,4 @@ else:
   print('Invalid syntax. The proper use is 14_cal.py [month] [year]')
   exit()
 
-print(myCalendar.formatmonth(year, month))
+myCalendar.prmonth(year, month)
